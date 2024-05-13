@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class DisplayInventory : MonoBehaviour
 {
-    public float X_SPACE;
-    public float Y_SPACE;
-    public float Z_SPACE;
-    public int NUMBER_OF_WIDTH; // x
-    public int NUMBER_OF_HEIGHT; //y
-    public int NUMBER_OF_DEPTH; //z
-    public GameObject BackPackObject;
-    public Vector3 BackpackPos;
-    public GameObject SlotPrefab;
+    [Header("BackPack Status")]
+    [SerializeField] float X_SPACE;
+    [SerializeField] float Y_SPACE;
+    [SerializeField] float Z_SPACE;
+    [SerializeField] int NUMBER_OF_WIDTH; // x
+    [SerializeField] int NUMBER_OF_HEIGHT; //y
+    [SerializeField] int NUMBER_OF_DEPTH; //z
 
-    public Camera BackpackTracer;
-    public float traceSpeed;
-    public float traceDistance;
-    public float traceTime;
-    public float TracerHeight;
+    [SerializeField] GameObject BackPackObject;
+    [SerializeField] Vector3 BackpackPos;
+    [SerializeField] GameObject SlotPrefab;
+
+    [SerializeField] Camera BackpackTracer;
+    [SerializeField] float traceSpeed;
+    [SerializeField] float traceDistance;
+    [SerializeField] float traceTime;
+    [SerializeField] float TracerHeight;
+
+    [SerializeField] Material DefaultMat;
+    [SerializeField] Material DisableMat;
+    [SerializeField] Material AbleMat;
 
 
     // Start is called before the first frame update
     void Start()
     {
         traceTime = 0f;
-        traceSpeed = 100f;
-        traceDistance = Mathf.Max(NUMBER_OF_WIDTH, NUMBER_OF_HEIGHT, NUMBER_OF_DEPTH);
-        TracerHeight = Mathf.Min(NUMBER_OF_WIDTH, NUMBER_OF_HEIGHT, NUMBER_OF_DEPTH);
+        traceSpeed = 50f;
+        traceDistance = Mathf.Max(NUMBER_OF_WIDTH, NUMBER_OF_HEIGHT, NUMBER_OF_DEPTH) + 1;
+        TracerHeight = Mathf.Min(NUMBER_OF_WIDTH, NUMBER_OF_HEIGHT, NUMBER_OF_DEPTH) - 1;
 
         BackpackPos = BackPackObject.transform.position;
         for (int i = 0; i < NUMBER_OF_WIDTH; i++) {
@@ -59,7 +65,7 @@ public class DisplayInventory : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q))
         {
-            traceTime += Time.deltaTime;
+            traceTime += Time.unscaledTime;
             BackpackTracer.transform.localPosition = new Vector3(Mathf.Cos(Mathf.Deg2Rad * traceSpeed * traceTime), TracerHeight / traceDistance,  Mathf.Sin(Mathf.Deg2Rad * traceSpeed * traceTime)) * traceDistance + BackpackPos;
             Vector3 vec = BackpackPos - BackpackTracer.transform.position;
             vec.Normalize();
@@ -69,7 +75,7 @@ public class DisplayInventory : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.E))
         {
-            traceTime -= Time.deltaTime;
+            traceTime -= Time.unscaledTime;
             BackpackTracer.transform.localPosition = new Vector3(Mathf.Cos(Mathf.Deg2Rad * traceSpeed * traceTime), TracerHeight / traceDistance, Mathf.Sin(Mathf.Deg2Rad * traceSpeed * traceTime)) * traceDistance + BackpackPos;
             Vector3 vec = BackpackPos - BackpackTracer.transform.position;
             vec.Normalize();

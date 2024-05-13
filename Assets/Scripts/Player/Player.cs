@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public Rigidbody rigid;
     public InventoryObject inventory;
-    public DisplayInventory inventoryUI;
+
     public Camera inventoryTracer;
     public Camera mainCam;
 
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
             var item = other.GetComponent<Item>();
             if (item)
             {
-                inventory.AddItem(item.item, 1);
+                // inventory.AddItem(item.item, 1);
                 Destroy(other.gameObject);
             }
         }
@@ -55,8 +55,8 @@ public class Player : MonoBehaviour
     private void invenCheck()
     {
         if (Input.GetKeyDown(KeyCode.I))
-        { 
-            
+        {
+            GameManager.instance.InventoryCheck();
         }
     }
 
