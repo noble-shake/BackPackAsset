@@ -343,20 +343,21 @@ MonoBehaviour:
   X_SPACE: 1
   Y_SPACE: 1
   Z_SPACE: 1
-  NUMBER_OF_WIDTH: 4
-  NUMBER_OF_HEIGHT: 3
-  NUMBER_OF_DEPTH: 3
+  NUMBER_OF_WIDTH: 3
+  NUMBER_OF_HEIGHT: 4
+  NUMBER_OF_DEPTH: 5
   BackPackObject: {fileID: 1920494070}
   BackpackPos: {x: 0, y: 0, z: 0}
   SlotPrefab: {fileID: 7061584841138310577, guid: 1dda959c72098a54eb9a598708f48b3d, type: 3}
   BackpackTracer: {fileID: 2072813908}
-  traceSpeed: 100
+  traceSpeed: 80
   traceDistance: 0
   traceTime: 0
   TracerHeight: 2
   DefaultMat: {fileID: 0}
   DisableMat: {fileID: 0}
   AbleMat: {fileID: 0}
+  storeMode: 0
 --- !u!4 &521947621
 Transform:
   m_ObjectHideFlags: 0
@@ -1247,7 +1248,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072813906}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2072813908
 Camera:
   m_ObjectHideFlags: 0

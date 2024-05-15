@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4315865838670316496}
   - component: {fileID: 4260271763470429391}
   - component: {fileID: 5149438167052246791}
+  - component: {fileID: 1161944812782391603}
   m_Layer: 6
   m_Name: Slot
   m_TagString: Untagged
@@ -83,3 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1161944812782391603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061584841138310577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15349f98d520a684fb24e31ec9fa6a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oriW: 0
+  oriH: 0
+  oriD: 0
+  importMode: 0
+  CursorOn: 0
+  isEmpty: 0
+  ItemObject: {fileID: 0}
+  meshRenderer: {fileID: 0}
+  DefaultMat: {fileID: 2100000, guid: 8e70f9dfb25d10a4c9a27f200b4b828e, type: 2}
+  DisableMat: {fileID: 2100000, guid: 14cfb52f333a5dc4982f08f6297d9ac1, type: 2}
+  AbleMat: {fileID: 2100000, guid: d31dbf7e2d3196643a1a001e7d925f70, type: 2}
